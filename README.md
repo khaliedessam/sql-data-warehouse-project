@@ -117,74 +117,42 @@ EXEC bronze.load_bronze;
 
 ---
 
-## 🥈 Silver Layer — Data Cleaning & Transformation
+---
+
+# 🥈 Step 2 — Create Silver Layer (Data Cleaning & Transformation)
 
 The Silver layer transforms raw Bronze data into clean, structured, and standardized datasets.
-### 1️⃣ Create Silver Tables
+
+---
+
+## 1️⃣ Create Silver Tables
 
 Run:
 
 `Ddl Query for Silver Layer.sql`
 
-This script:
+This will:
 
-- Drops existing Silver tables (if any)
-- Creates structured tables in the `silver` schema
+- Drop existing Silver tables (if any)
+- Create structured tables in the `silver` schema
 
-### 2️⃣ Create Silver Load Procedure
+---
+
+## 2️⃣ Create Silver Load Procedure
 
 Run:
 
 `Stored Procedures for Silver Layer.sql`
 
-This creates the stored procedure:
+This creates:
 
 `silver.load_silver`
 
-### 3️⃣ Execute Silver ETL Process
+---
+
+## 3️⃣ Execute Silver ETL Process
 
 Run:
 
 ```sql
 EXEC silver.load_silver;
----
-# 🥇 Gold Layer — Business Model (Star Schema)
-
-The Gold layer exposes business-ready data using a Star Schema design.
-
-It includes:
-
-- 2 Dimension Views
-- 1 Fact View
-
----
-## 🎯 Gold Objects
-
-- `gold.dim_customers`
-- `gold.dim_products`
-- `gold.fact_sales`
-
-These are implemented as SQL Views built on top of Silver tables.
-## 1️⃣ Create Gold Views
-
-Run:
-
-`Ddl gold layer.sql`
-
-This script:
-
-- Drops existing Gold views (if they exist)
-- Recreates:
-  - `gold.dim_customers`
-  - `gold.dim_products`
-  - `gold.fact_sales`
-
----
-
-## 2️⃣ Validate Gold Layer
-
-```sql
-SELECT  * FROM gold.dim_customers;
-SELECT  * FROM gold.dim_products;
-SELECT  * FROM gold.fact_sales;
-
