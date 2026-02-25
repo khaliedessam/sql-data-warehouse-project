@@ -72,6 +72,5 @@ The data architecture for this project follows Medallion Architecture **Bronze**
 ---
 
 
-## 👤 Author
-Khaled Essam  
-SQL Data Engineer
+
+
