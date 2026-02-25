@@ -196,6 +196,6 @@ This script:
 ## 2️⃣ Validate Gold Layer
 
 ```sql
-SELECT TOP * FROM gold.dim_customers;
-SELECT TOP * FROM gold.dim_products;
-SELECT TOP * FROM gold.fact_sales;
+SELECT  * FROM gold.dim_customers;
+SELECT  * FROM gold.dim_products;
+SELECT  * FROM gold.fact_sales;
