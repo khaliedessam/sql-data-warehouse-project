@@ -117,10 +117,10 @@ EXEC bronze.load_bronze;
 
 ---
 
-# 🥈 Silver Layer — Data Cleaning & Transformation
+## 🥈 Silver Layer — Data Cleaning & Transformation
 
 The Silver layer transforms raw Bronze data into clean, structured, and standardized datasets.
-## 1️⃣ Create Silver Tables
+### 1️⃣ Create Silver Tables
 
 Run:
 
@@ -131,7 +131,7 @@ This script:
 - Drops existing Silver tables (if any)
 - Creates structured tables in the `silver` schema
 
-## 2️⃣ Create Silver Load Procedure
+### 2️⃣ Create Silver Load Procedure
 
 Run:
 
@@ -141,7 +141,7 @@ This creates the stored procedure:
 
 `silver.load_silver`
 
-## 3️⃣ Execute Silver ETL Process
+### 3️⃣ Execute Silver ETL Process
 
 Run:
 
