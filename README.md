@@ -155,3 +155,47 @@ Run:
 ```sql
 EXEC silver.load_silver;
 ```
+---
+# 🥇 Gold Layer — Business Model (Star Schema)
+
+The Gold layer exposes business-ready data using a Star Schema design.
+
+It includes:
+
+- 2 Dimension Views
+- 1 Fact View
+
+---
+
+## 🎯 Gold Objects
+
+- `gold.dim_customers`
+- `gold.dim_products`
+- `gold.fact_sales`
+
+These are implemented as SQL Views built on top of Silver tables.
+
+---
+
+## 1️⃣ Create Gold Views
+
+Run:
+
+`Ddl gold layer.sql`
+
+This script:
+
+- Drops existing Gold views (if they exist)
+- Recreates:
+  - `gold.dim_customers`
+  - `gold.dim_products`
+  - `gold.fact_sales`
+
+---
+
+## 2️⃣ Validate Gold Layer
+
+```sql
+SELECT TOP * FROM gold.dim_customers;
+SELECT TOP * FROM gold.dim_products;
+SELECT TOP * FROM gold.fact_sales;
