@@ -114,45 +114,6 @@ Execute:
 
 ```sql
 EXEC bronze.load_bronze;
-
----
----
-
-# 🥈 Step 2 — Create Silver Layer (Data Cleaning & Transformation)
-
----
-
-## 1️⃣ Create Silver Tables
-
-Run:
-
-`Ddl Query for Silver Layer.sql`
-
-This will:
-
-- Drop existing Silver tables (if any)
-- Create structured tables in the `silver` schema
-
----
-
-## 2️⃣ Create Silver Load Procedure
-
-Run:
-
-`Stored Procedures for Silver Layer.sql`
-
-This creates:
-
-`silver.load_silver`
-
----
-
-## 3️⃣ Execute Silver ETL Process
-
-Run:
-
-```sql
-EXEC bronze.load_bronze;
 ```
 ---
 
