@@ -115,5 +115,3 @@ Execute:
 ```sql
 EXEC bronze.load_bronze;
 
----
-
