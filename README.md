@@ -116,6 +116,7 @@ Execute:
 EXEC bronze.load_bronze;
 
 ---
+
 # 🥈 Silver Layer — Data Cleaning & Transformation
 
 The Silver layer transforms raw Bronze data into clean, structured, and standardized datasets.
