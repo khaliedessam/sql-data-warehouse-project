@@ -94,7 +94,7 @@ cu.customer_key,        ---dimension key
 sd.sls_order_dt as order_date,
 sd.sls_ship_dt as shipping_date ,
 sd.sls_due_dt as due_date,
-sd.sls_sales as sales_amonut,
+sd.sls_sales as sales_amount,
 sd.sls_quantity as quantity,
 sd.sls_price as price
 from silver.crm_sales_details sd
