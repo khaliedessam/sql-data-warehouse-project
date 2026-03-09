@@ -36,9 +36,6 @@ Develop a modern data warehouse using SQL Server to consolidate sales data, enab
 
 ---
 ### BI: Analytics & Reporting (Data Analysis)
-On top of the gold layer, a set of analytical SQL queries were developed to explore and analyze the data.
-These scripts cover various analyses such as database exploration, measures and metrics, time-based trends, cumulative analytics, segmentation, and more.
-This repository contains SQL queries designed to help data analysts and BI professionals quickly explore, segment, and analyze data within a relational database. Each script focuses on a specific analytical theme and demonstrates best practices for SQL queries.
 
 #### Objective
 Develop SQL-based analytics to deliver detailed insights into:
@@ -66,7 +63,7 @@ data-warehouse-project/
 │   ├── bronze/                         # Scripts for extracting and loading raw data
 │   ├── silver/                         # Scripts for cleaning and transforming data
 │   ├── gold/                           # Scripts for creating analytical models
-│
+│   ├── analytics/                      # Scripts for analytical SQL queries were developed to explore and analyze the data.
 ├── tests/                              # Test scripts and quality files
 │
 ├── README.md                           # Project overview and instructions
@@ -233,3 +230,4 @@ This script:
   - `gold.fact_sales`
 
 ---
+
