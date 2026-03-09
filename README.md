@@ -73,21 +73,50 @@ data-warehouse-project/
 ---
 ## ⚙️ ETL Process
 
-### 1️⃣ Bronze Layer
-- Raw data loaded from source systems
-- No transformations applied
+### ETL Pipeline Workflow
 
-### 2️⃣ Silver Layer
-- Data cleansing
-- Data standardization
-- Handling NULL values
-- Deduplication using `ROW_NUMBER()`
-
-### 3️⃣ Gold Layer
-- Star schema implementation
-- Surrogate keys generated
-- Business logic applied
-
+```
+┌─────────────────────────────────────────┐
+│       SOURCE SYSTEMS (CSV FILES)        │
+│  ┌────────────┐      ┌────────────┐    │
+│  │ CRM System │      │ ERP System │    │
+│  │  (6 CSVs)  │      │  (3 CSVs)  │    │
+│  └────────────┘      └────────────┘    │
+└─────────────────────────────────────────┘
+              ↓ (Extract)
+┌─────────────────────────────────────────┐
+│       STEP 1: BRONZE LAYER              │
+│     ✓ Load raw data as-is               │
+│     ✓ No transformations                │
+│     ✓ Direct CSV import                 │
+└─────────────────────────────────────────┘
+              ↓ (Transform)
+┌─────────────────────────────────────────┐
+│       STEP 2: SILVER LAYER              │
+│     ✓ Data quality checks               │
+│     ✓ NULL value handling               │
+│     ✓ Standardize formats               │
+│     ✓ Remove duplicates                 │
+│     ✓ Type conversions                  │
+└─────────────────────────────────────────┘
+              ↓ (Transform)
+┌─────────────────────────────────────────┐
+│       STEP 3: GOLD LAYER                │
+│     ✓ Merge CRM + ERP data              │
+│     ✓ Create surrogate keys             │
+│     ✓ Generate star schema              │
+│     ✓ Apply business rules              │
+│     ✓ Optimize for analytics            │
+└─────────────────────────────────────────┘
+              ↓ (Load)
+┌─────────────────────────────────────────┐
+│   ANALYTICS & REPORTING LAYER           │
+│  ✓ Dashboards                           │
+│  ✓ Reports                              │
+│  ✓ Business Intelligence                │
+│  ✓ Machine Learning Models              │
+└─────────────────────────────────────────┘
+```
 ---
 
 ## 🚀 How to Run This Project 
