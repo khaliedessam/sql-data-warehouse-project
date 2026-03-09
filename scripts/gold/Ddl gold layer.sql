@@ -104,3 +104,5 @@ left join gold.dim_customers cu
 on    sd.sls_cust_id = cu.customer_id
 
 Go
+
+
