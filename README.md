@@ -113,8 +113,7 @@ data-warehouse-project/
 │   ANALYTICS & REPORTING LAYER           │
 │  ✓ Dashboards                           │
 │  ✓ Reports                              │
-│  ✓ Business Intelligence                │
-│  ✓ Machine Learning Models              │
+│  ✓ Business Intelligence                │    │
 └─────────────────────────────────────────┘
 ```
 ---
