@@ -183,7 +183,7 @@ EXEC bronze.load_bronze;
 ```
 ---
 
-# 🥈 Step 2 — Create Silver Layer (Data Cleaning & Transformation)
+# 🥈 Step 2 — Create Silver Layer 
 
 The Silver layer transforms raw Bronze data into clean, structured, and standardized datasets.
 
