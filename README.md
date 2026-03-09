@@ -2,7 +2,7 @@
 
 Welcome to the Data Warehouse and Analytics Project repository.
 This project demonstrates a comprehensive data warehousing and analytics solution — from building a data warehouse to generating actionable insights.
-Designed as a portfolio project, it highlights industry best practices in data engineering and analytics.
+, it highlights industry best practices in data engineering and analytics.
 
 ## 📖 Project Overview
 This project involves:
@@ -12,7 +12,14 @@ This project involves:
 3. **Data Modeling**: Developing fact and dimension tables optimized for analytical queries.
 4. **Analytics & Reporting**: Creating SQL-based reports and dashboards for actionable insights.
 ---
+## 🛠️ Important Links & Tools:
 
+Everything is for Free!
+- **[Datasets](datasets/):** Access to the project dataset (csv files).
+- **[SQL Server Express](https://www.microsoft.com/en-us/sql-server/sql-server-downloads):** Lightweight server for hosting your SQL database.
+- **[SQL Server Management Studio (SSMS)](https://learn.microsoft.com/en-us/sql/ssms/download-sql-server-management-studio-ssms?view=sql-server-ver16):** GUI for managing and interacting with databases.
+- **[Git Repository](https://github.com/):** Set up a GitHub account and repository to manage, version, and collaborate on your code efficiently.
+- **[DrawIO](https://www.drawio.com/):** Design data architecture, models, flows, and diagrams.
 ## 🚀 Project Requirements
 
 ### Building the Data Warehouse (Data Engineering)
@@ -28,9 +35,41 @@ Develop a modern data warehouse using SQL Server to consolidate sales data, enab
 - **Documentation**: Provide clear documentation of the data model to support both business stakeholders and analytics teams.
 
 ---
+### BI: Analytics & Reporting (Data Analysis)
+
+#### Objective
+Develop SQL-based analytics to deliver detailed insights into:
+- **Customer Behavior**
+- **Product Performance**
+- **Sales Trends**
+These insights empower stakeholders with key business metrics, enabling strategic decision-making.  
 ## 🏗️ Data Architecture
 The data architecture for this project follows Medallion Architecture **Bronze**, **Silver**, and **Gold** layers:
 ![Data Architecture](docs/data_architecture.png)
+## 📂 Repository Structure
+```
+data-warehouse-project/
+│
+├── datasets/                           # Raw datasets used for the project (ERP and CRM data)
+│
+├── docs/                               # Project documentation and architecture details
+│   ├── data_integration                # Draw.io file shows how tables are related
+│   ├── data_architecture.drawio        # Draw.io file shows the project's architecture
+│   ├── data_catalog.md                 # Catalog of datasets, including field descriptions and metadata
+│   ├── data_flow.drawio                # Draw.io file for the data flow diagram
+│   ├── data_models.drawio              # Draw.io file for data models (star schema)
+│
+├── scripts/                            # SQL scripts for ETL and transformations
+│   ├── bronze/                         # Scripts for extracting and loading raw data
+│   ├── silver/                         # Scripts for cleaning and transforming data
+│   ├── gold/                           # Scripts for creating analytical models
+│   ├── analytics/                      # Scripts for analytical SQL queries were developed to explore and analyze the data.
+├── tests/                              # Test scripts and quality files
+│
+├── README.md                           # Project overview and instructions
+```
+---
+
 ---
 ## ⚙️ ETL Process
 
@@ -192,9 +231,3 @@ This script:
 
 ---
 
-## 2️⃣ Validate Gold Layer
-
-```sql
-SELECT  * FROM gold.dim_customers;
-SELECT  * FROM gold.dim_products;
-SELECT  * FROM gold.fact_sales;
