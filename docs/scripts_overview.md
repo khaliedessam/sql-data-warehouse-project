@@ -63,6 +63,7 @@ The `analytics` directory contains numbered SQL scripts that progressively explo
 
 
 
+
 > **Note:** the analytics scripts assume the gold views already exist and are populated. Use these files as examples or building blocks when creating dashboards, reports, or further analytical pipelines.
 
 Feel free to reference this markdown when expanding the project or sharing documentation with team members.
