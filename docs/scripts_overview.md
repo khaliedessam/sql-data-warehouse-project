@@ -42,21 +42,22 @@ The `analytics` directory contains numbered SQL scripts that progressively explo
 
 ### 📁 File descriptions
 
-| # | Filename | Focus | Key outputs | Notes |
-|---|----------|-------|-------------|-------|
-| 1 | `Database exploration.sql` | Metadata inspection | Lists of tables & columns; peek at `dim_customers` | Useful to verify gold objects are available. |
-| 2 | `Dimensions Exploration.sql` | Dimension value sets | Distinct countries; product categories / subcategories | Quick sanity checks on master data. |
-| 3 | `Date Exploration.sql` | Date boundaries | First/last order date; customer age extremes | Establish temporal span of the business. |
-| 4 | `Measure Exploration.sql` | Aggregate KPIs | Total sales, orders, customers, products; metrics report table | Foundation for executive summary dashboards. |
-| 5 | `Magnitude Analsyis.sql` | Measure-by-dimension | Revenue/quantity customers by country/gender; category totals; customer revenue ranking | Helps prioritize focus areas. |
-| 6 | `Ranking.sql` | Top/Bottom N analysis | Top‑5/10 products/customers; worst performers; ranked lists using window functions | Useful for leaderboard style reports. |
-| 07 | `change over time.sql` | Trend analysis | Sales and customer counts by year or month | Time series for trend charts. |
-| 08 | ` commulative analsyis.sql` | Cumulative & running totals | Yearly running totals, moving averages | Visualize growth over time. |
-| 09 | ` performance analysis.sql` | Performance vs. benchmarks | Yearly product sales vs. average and prior year with change flags | Analytical help for variance reporting. |
-| 10 | `part_to_whole_analysis.sql` | Part‑to‑whole ratio | Category share of overall revenue | Pie/donut chart inputs. |
-| 11 | `Data segmentation.sql` | Segmentation | Product cost buckets; customer segments (VIP/Regular/New) and counts | Basis for targeted marketing or pricing. |
-| 12 | ` repot_customers.sql` | Customer reporting view | View `gold.report_customers` with detailed metrics/KPIs per customer | Can be queried directly or used as source for downstream reports. |
-| 13 | ` report_products.sql` | Product reporting view | View `gold.report_products` with product‑level KPIs and segments | Handy for product management dashboards. |
+| Filename | Purpose |
+|----------|---------|
+| `1-Database exploration.sql` | Metadata inspection: Explore all objects and columns in the database  |
+| `2-Dimensions Exploration.sql` |  Identifying the unique values in each dimension (Customers and Products) (using DISTINCT)
+ |
+| `3-Date Exploration.sql` | Identifying Date boundaries to get time span of business  |
+| `4-Measure Exploration.sql` | Generate a Report that shows all key metrics of the business KPIs such as  Total sales, total quantity, average price, total no. of products and customers . |
+| `5-Magnitude Analsyis.sql` | Compare the measure values by categories to understand the importance of different categories such as total customers by countries or gender and  total products by category and so on . |
+| `6-Ranking.sql` | Order the values of dimensions by measure in order to identify Top N performers & Bottom N performers so ranking analysis answers questions like What are the Top 10 products by sales? and so on . |
+| `7-change over time.sql` | Change over time analsyis (Trends) such as Analyze Sale Performance  Over Time |
+| `8- commulative analsyis.sql` | Aggregate the data progressivly over time to understand whether our business is growing or declining such as total sales per month and the running total of sales overtime.|
+| `9- performance analysis.sql` | Comparing the current value to a targte value such as yearly performance of products comparing by the previous year's sales |
+| `10-part_to_whole_analysis.sql` | Analyze how an individual part is performing compared to the overall. |
+| `11-Data segmentation.sql` | To group data into meaningful categories for targeted insights For customer segmentation, product categorization, or regional analysis.. |
+| `12- repot_customers.sql` | This report consolidates key customer metrics , behaviors and calulate valuable KPIs . |
+| `13- report_products.sql` | This report consolidates key product metrics , behaviors and calulate valuable KPIs . |
 
 ---
 
