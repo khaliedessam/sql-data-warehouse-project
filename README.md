@@ -131,7 +131,7 @@ Make sure you have:
   - `/bronze` scripts
   - `/silver` scripts
   - `/gold` scripts
-  
+   - `/analytics` scripts
 
 ---
 # 🥉 Step 1 — Create Bronze Layer (Raw Data Ingestion)
