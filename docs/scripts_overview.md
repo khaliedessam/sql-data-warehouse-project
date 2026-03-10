@@ -45,8 +45,7 @@ The `analytics` directory contains numbered SQL scripts that progressively explo
 | Filename | Purpose |
 |----------|---------|
 | `1-Database exploration.sql` | Metadata inspection: Explore all objects and columns in the database  |
-| `2-Dimensions Exploration.sql` |  Identifying the unique values in each dimension (Customers and Products) (using DISTINCT)
- |
+| `2-Dimensions Exploration.sql` |  Identifying the unique values in each dimension (Customers and Products) (using DISTINCT)|
 | `3-Date Exploration.sql` | Identifying Date boundaries to get time span of business  |
 | `4-Measure Exploration.sql` | Generate a Report that shows all key metrics of the business KPIs such as  Total sales, total quantity, average price, total no. of products and customers . |
 | `5-Magnitude Analsyis.sql` | Compare the measure values by categories to understand the importance of different categories such as total customers by countries or gender and  total products by category and so on . |
