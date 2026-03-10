@@ -134,7 +134,7 @@ Make sure you have:
    - `/analytics` scripts
 
 ---
-# 🥉 Step 1 — Create Bronze Layer (Raw Data Ingestion)
+## 🥉 Step 1 — Create Bronze Layer (Raw Data Ingestion)
 ### 1️⃣ Initialize Database
 
 Run:
@@ -183,7 +183,7 @@ EXEC bronze.load_bronze;
 ```
 ---
 
-# 🥈 Step 2 — Create Silver Layer (Data Cleaning & Transformation)
+## 🥈 Step 2 — Create Silver Layer (Data Cleaning & Transformation)
 
 The Silver layer transforms raw Bronze data into clean, structured, and standardized datasets.
 
@@ -222,7 +222,7 @@ Run:
 EXEC silver.load_silver;
 ```
 ---
-# 🥇 Gold Layer — Business Model (Star Schema)
+## 🥇 Step 3 —Gold Layer — Business Model (Star Schema)
 
 The Gold layer exposes business-ready data using a Star Schema design.
 
@@ -256,6 +256,29 @@ This script:
   - `gold.dim_customers`
   - `gold.dim_products`
   - `gold.fact_sales`
+
+---
+
+## 🧠 Step 4 — Run Analytics Queries
+
+With the gold layer ready, dive into the analytics phase to uncover insights from your data. The `scripts/analytics/` folder contains 13 numbered SQL scripts that progressively explore and analyze the gold views, from basic data inspection to advanced reporting.
+
+### Prerequisites
+- Gold views (`gold.dim_customers`, `gold.dim_products`, `gold.fact_sales`) must be created and populated.
+- Use your SQL client (SSMS, Azure Data Studio, etc.) to execute the scripts.
+
+### Execution Guide
+1. **Navigate to the folder**: Open `scripts/analytics/` in your SQL client.
+2. **Run in sequence**: Execute files from `1-Database exploration.sql` to `13-report_products.sql` for a logical flow, or pick specific ones as needed.
+   - **Key highlights**:
+     - Scripts 1-11: Standalone queries for exploration (e.g., KPIs, trends, rankings).
+     - Scripts 12-13: Create reporting views (`gold.report_customers` and `gold.report_products`) for deeper analysis.
+3. **Review outputs**: Check results in the query window; export to CSV/Excel for visualization.
+
+
+> 📖 For full descriptions, see [`docs/scripts_overview.md`](docs/scripts_overview.md).
+
+> 💡 Tip: These scripts are modular—adapt them for dashboards (e.g., Power BI) or custom reports. Start with 01-04 for quick wins, then explore advanced analyses in 09-13.
 
 ---
 
