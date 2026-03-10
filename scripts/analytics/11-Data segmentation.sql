@@ -95,8 +95,9 @@ GROUP BY
        ELSE 'New'
   END ;
     
-    
-    ---- Using Subquery find the total number of customers by each group
+   
+    ---- By using CTE find the total number of customers by each group
+
 
   WITH customer_spending as (
  SELECT
@@ -110,21 +111,24 @@ GROUP BY
  LEFT JOIN gold.dim_customers c
  on f.customer_key = c.customer_key
  group by c.customer_key
- )
-
+ ),
+ 
+ total_customers as (
  SELECT 
-    count(customer_key) as total_customers,
-    customer_segment 
-from (
-   select customer_key,
+    customer_key,
+    total_spending,
+    lifespan,
   CASE WHEN total_spending > 5000 AND lifespan >= 12 THEN 'VIP'
        WHEN total_spending <= 5000 AND lifespan >= 12 THEN 'Regular'
        ELSE 'New'
-  END AS customer_segment
-  from customer_spending ) t
-  group by customer_segment
-  order by total_customers desc
+  END AS customers_segment
+  from customer_spending )
   
+  select count(customer_key) as total_customers,
+         customers_segment
+from  
+total_customers 
+group by customers_segment
+order by total_customers;
 
-
-
+    
